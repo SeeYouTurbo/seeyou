@@ -27,10 +27,10 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!   $(printf "%q" ${{ vars.COOKIE }})
+        run: echo Hello, world!   $(printf "%q" ${{ secrets.COOK }})
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         env:
           COOKIE: ${{ vars.COOKIE }}
-        run: bash ./test.sh ${{ vars.AUTHORIZATION }} ${{ vars.COOKIE }}
+        run: bash ./test.sh ${{ vars.AUTHORIZATION }} ${{ secrets.COOK }}
