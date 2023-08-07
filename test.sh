@@ -6,6 +6,9 @@ LANGUAGE="zh-CN"
 UNIT=m
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
 echo "repository variable : $2"
+API_URL=$(printf "%q" "$2")
+echo $API_URL
+
 curl 'https://glados.work/api/user/checkin' \
   -H 'authority: glados.work' \
   -H 'accept: application/json, text/plain, */*' \
@@ -13,7 +16,7 @@ curl 'https://glados.work/api/user/checkin' \
   -H "authorization: \"$1\"" \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json;charset=UTF-8' \
-  -H "cookie: $(printf "%q" "$2")" \
+  -H "cookie: $API_URL" \
   -H 'origin: https://glados.work' \
   -H 'pragma: no-cache' \
   -H 'sec-ch-ua: "Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"' \
