@@ -33,4 +33,4 @@ jobs:
       - name: Run a multi-line script
         env:
           COOKIE: ${{ vars.COOKIE }}
-        run: bash ./test.sh ${{ vars.AUTHORIZATION }} ${{ secrets.COOK }}
+        run: bash ./test.sh ${{ vars.AUTHORIZATION }} '${{ secrets.COOK }}'
