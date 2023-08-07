@@ -13,7 +13,7 @@ curl 'https://glados.work/api/user/checkin' \
   -H "authorization: \"$1\"" \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json;charset=UTF-8' \
-  -H "cookie: \"$2\"" \
+  -H "cookie: $(printf "%q" "$2")" \
   -H 'origin: https://glados.work' \
   -H 'pragma: no-cache' \
   -H 'sec-ch-ua: "Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"' \
